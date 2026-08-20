@@ -1,0 +1,105 @@
+.app {
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+}
+
+.logo {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.header nav {
+  display: flex;
+  gap: 20px;
+}
+
+.header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+.hero h1 {
+  margin: 0;
+}
+
+.hero p {
+  margin: 12px 0 24px;
+}
+
+.hero input {
+  width: min(400px, 100%);
+  padding: 10px 12px;
+}
+
+.tools {
+  width: min(1000px, calc(100% - 40px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.tool-card {
+  padding: 24px 16px;
+  text-align: center;
+  border: 1px solid #333;
+}
+
+.tool-card h2 {
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+
+.tool-card p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.footer {
+  margin-top: 60px;
+  padding: 28px 24px;
+  border-top: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-brand,
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-brand {
+  font-size: 14px;
+}
+
+.footer-links {
+  min-width: 140px;
+}
+
+.footer-links strong {
+  margin-bottom: 4px;
+}
+
+.footer-links a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer span {
+  font-size: 13px;
+}
