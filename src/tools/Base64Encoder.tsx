@@ -4,15 +4,26 @@ import ToolSidebar from '../components/ToolSidebar'
 function Base64Encoder() {
   const [input, setInput] = useState('')
   const [result, setResult] = useState('')
+  const [toasts, setToasts] = useState<string[]>([])
 
   const encode = () => {
     const encoded = btoa(input)
     setResult(encoded)
   }
 
-  const copyResult = async () => {
-  await navigator.clipboard.writeText(result)
-  }
+    const copyResult = async () => {
+    await navigator.clipboard.writeText(result)
+
+    const id = crypto.randomUUID()
+
+    setToasts((current) => [...current, id])
+
+    setTimeout(() => {
+    setToasts((current) =>
+        current.filter((toastId) => toastId !== id)
+    )
+    }, 5000)
+    }
 
     return (
     <div className="tool-layout">
@@ -64,6 +75,14 @@ function Base64Encoder() {
                 >
                 Copy
                 </button>
+
+                <div className="toast-stack">
+                    {[...toasts].reverse().map((toast) => (
+                    <div key={toast} className="copy-toast">
+                        ✓ Copied to clipboard!
+                    </div>
+                    ))}
+                </div>
 
             </section>
 

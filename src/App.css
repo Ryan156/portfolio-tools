@@ -287,3 +287,97 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+.toast-stack {
+  position: fixed;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 445px;
+  height: 70px;
+
+  z-index: 1000;
+}
+
+.copy-toast {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 20px;
+
+  border: 1px solid #ccc;
+  border-radius: 8px;
+
+  background: #fff;
+  color: #333;
+
+  font-size: 16px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  transition:
+    top 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.4s ease;
+
+  animation: toast-enter 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.copy-toast:nth-child(1) {
+  z-index: 3;
+  top: 0;
+  transform: scale(1);
+}
+
+.copy-toast:nth-child(2) {
+  z-index: 2;
+  top: 8px;
+  transform: scale(0.96);
+}
+
+.copy-toast:nth-child(3) {
+  z-index: 1;
+  top: 16px;
+  transform: scale(0.92);
+}
+
+@keyframes toast-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(-45px) scale(0.9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(5px) scale(1.02);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.toast-stack:hover {
+  height: 220px;
+}
+
+.toast-stack:hover .copy-toast:nth-child(1) {
+  top: 0;
+  transform: scale(1);
+}
+
+.toast-stack:hover .copy-toast:nth-child(2) {
+  top: 82px;
+  transform: scale(1);
+}
+
+.toast-stack:hover .copy-toast:nth-child(3) {
+  top: 164px;
+  transform: scale(1);
+}
