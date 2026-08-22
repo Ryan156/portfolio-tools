@@ -3,43 +3,73 @@
 }
 
 .header {
+  width: min(1100px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 20px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 24px;
 }
 
 .logo {
+  color: inherit;
+  font-size: 15px;
   font-weight: 700;
   text-decoration: none;
 }
 
 .header nav {
   display: flex;
-  gap: 20px;
+  gap: 24px;
 }
 
-.header a {
-  color: inherit;
+.header nav a {
+  color: #aaa;
+  font-size: 14px;
   text-decoration: none;
+}
+
+.header nav a:hover {
+  color: #fff;
 }
 
 .hero {
   text-align: center;
-  padding: 60px 20px 40px;
+  padding: 90px 20px 60px;
 }
 
 .hero h1 {
   margin: 0;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1;
+  letter-spacing: -0.04em;
 }
 
 .hero p {
-  margin: 12px 0 24px;
+  max-width: 520px;
+  margin: 18px auto 28px;
+  color: #999;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 .hero input {
-  width: min(400px, 100%);
-  padding: 10px 12px;
+  width: min(460px, 100%);
+  padding: 13px 16px;
+  border: 1px solid #3a3a3a;
+  border-radius: 6px;
+  outline: none;
+  background: #222224;
+  color: #fff;
+  font: inherit;
+}
+
+.hero input::placeholder {
+  color: #777;
+}
+
+.hero input:focus {
+  border-color: #666;
 }
 
 .tools {
@@ -51,9 +81,23 @@
 }
 
 .tool-card {
+  display: block;
   padding: 24px 16px;
   text-align: center;
   border: 1px solid #333;
+  color: inherit;
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.tool-card:hover {
+  transform: scale(1.04);
+  border-color: #555;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .tool-card h2 {

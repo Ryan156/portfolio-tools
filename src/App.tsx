@@ -1,5 +1,33 @@
 import './App.css'
 
+const tools = [
+  {
+    id: 'base64-encoder',
+    name: 'Base64 Encoder',
+    description: 'Encode text to Base64',
+  },
+  {
+    id: 'base64-decoder',
+    name: 'Base64 Decoder',
+    description: 'Decode a Base64 string',
+  },
+  {
+    id: 'random-number-generator',
+    name: 'Random Number Generator',
+    description: 'Generate a random number',
+  },
+  {
+    id: 'uuid-generator',
+    name: 'UUID Generator',
+    description: 'Generate a random UUID',
+  },
+  {
+    id: 'json-formatter',
+    name: 'JSON Formatter',
+    description: 'Format and validate JSON',
+  },
+]
+
 function App() {
   return (
     <div className="app">
@@ -29,27 +57,15 @@ function App() {
           />
         </section>
 
-        <section className="tools">
-          <div className="tool-card">
-            <h2>Base64 Encoder</h2>
-            <p>Encode text to Base64</p>
-          </div>
+      <section className="tools">
+        {tools.map((tool) => (
+          <a key={tool.id} href={`/${tool.id}`} className="tool-card">
+            <h2>{tool.name}</h2>
+            <p>{tool.description}</p>
+          </a>
+        ))}
+      </section>
 
-          <div className="tool-card">
-            <h2>Base64 Decoder</h2>
-            <p>Decode a Base64 string</p>
-          </div>
-
-          <div className="tool-card">
-            <h2>Random Number Generator</h2>
-            <p>Generate a random number</p>
-          </div>
-
-          <div className="tool-card">
-            <h2>UUID Generator</h2>
-            <p>Generate a random UUID</p>
-          </div>
-        </section>
       </main>
 
         <footer className="footer">
