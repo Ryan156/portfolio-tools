@@ -1,46 +1,11 @@
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import './App.css'
+import Base64Encoder from './tools/Base64Encoder'
+import { tools } from './data/tools'
+import Layout from './components/Layout'
 
-const tools = [
-  {
-    id: 'base64-encoder',
-    name: 'Base64 Encoder',
-    description: 'Encode text to Base64',
-  },
-  {
-    id: 'base64-decoder',
-    name: 'Base64 Decoder',
-    description: 'Decode a Base64 string',
-  },
-  {
-    id: 'random-number-generator',
-    name: 'Random Number Generator',
-    description: 'Generate a random number',
-  },
-  {
-    id: 'uuid-generator',
-    name: 'UUID Generator',
-    description: 'Generate a random UUID',
-  },
-  {
-    id: 'json-formatter',
-    name: 'JSON Formatter',
-    description: 'Format and validate JSON',
-  },
-]
-
-function App() {
-  return (
-    <div className="app">
-      <header className="header">
-        <a href="/" className="logo">
-          ryan's tools
-        </a>
-
-        <nav>
-          <a href="/">Home</a>
-          <a href="/">About</a>
-        </nav>
-      </header>
+function Home() {
+    return (
 
       <main>
         <section className="hero">
@@ -67,22 +32,20 @@ function App() {
       </section>
 
       </main>
-
-        <footer className="footer">
-          <div className="footer-brand">
-            <strong>ryan's tools</strong>
-            <span>© 2026</span>
-            <span>Built by Ryan</span>
-          </div>
-
-          <div className="footer-links">
-            <strong>Links</strong>
-            <a href="/">Home</a>
-            <a href="/">About</a>
-          </div>
-        </footer>
-    </div>
     
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/base64-encoder" element={<Base64Encoder />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

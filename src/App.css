@@ -147,3 +147,143 @@
 .footer span {
   font-size: 13px;
 }
+
+.tool-layout {
+  width: min(1100px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 60px 0;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+}
+
+.tool-sidebar {
+  border: 1px solid #333;
+  padding: 20px;
+  height: fit-content;
+}
+
+.tool-sidebar h2 {
+  margin: 0 0 16px;
+  font-size: 16px;
+}
+
+.tool-sidebar input {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  outline: none;
+  background: #222224;
+  color: #fff;
+  font: inherit;
+}
+
+.tool-sidebar input::placeholder {
+  color: #777;
+}
+
+.tool-sidebar nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.tool-sidebar nav a {
+  padding: 8px 0;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.tool-sidebar nav a:hover {
+  color: #fff;
+}
+
+.tool-main {
+  min-width: 0;
+}
+
+.tool-main h1 {
+  margin: 0;
+  font-size: 42px;
+}
+
+.tool-main > p {
+  margin: 12px 0 28px;
+  color: #999;
+}
+
+.tool-panel {
+  padding: 28px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background: #171719;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tool-panel label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.tool-panel textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background: #222224;
+  color: #fff;
+  font: inherit;
+  resize: vertical;
+}
+
+.tool-panel textarea:focus {
+  outline: none;
+  border-color: #666;
+}
+
+.tool-panel textarea::placeholder {
+  color: #777;
+}
+
+.tool-panel button {
+  border: 0;
+  border-radius: 4px;
+  background: #f5f5f5;
+  color: #111;
+  font: inherit;
+  cursor: pointer;
+}
+
+.tool-panel button:hover {
+  background: #ddd;
+}
+
+.encode-button {
+  width: 100%;
+  padding: 10px;
+}
+
+.encode-button:hover {
+  background: #ddd;
+}
+
+.copy-button {
+  align-self: center;
+  padding: 8px 18px;
+  margin-top: 4px;
+}
+
+.copy-button:hover {
+  background: #ddd;
+}
+
+.copy-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
