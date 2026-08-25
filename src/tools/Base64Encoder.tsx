@@ -86,7 +86,7 @@ function Base64Encoder() {
 
             <h3>What is Base64?</h3>
             <p>
-                What is Base64 encoding? Base64 is a encoding mechanism that encodes binary-to-text. 
+                Base64 is a encoding mechanism that encodes binary-to-text. 
                 That is binary data is converted to ASCII string format by using radix-65 representation.
             </p>
 
