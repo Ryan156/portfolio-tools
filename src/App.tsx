@@ -42,9 +42,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/base64-encoder" element={<Base64Encoder />} />
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="base64-encoder" element={<Base64Encoder />} />
         </Route>
       </Routes>
     </BrowserRouter>
