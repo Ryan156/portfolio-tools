@@ -10,7 +10,7 @@ function Layout() {
 
         <nav>
           <a href="/">Home</a>
-          <a href="/">About</a>
+          <a href="/about">About</a>
         </nav>
       </header>
 
@@ -29,7 +29,7 @@ function Layout() {
         <div className="footer-links">
           <strong>Links</strong>
           <a href="/">Home</a>
-          <a href="/">About</a>
+          <a href="/about">About</a>
         </div>
 
         </div>

@@ -3,6 +3,7 @@ import './App.css'
 import Base64Encoder from './tools/Base64Encoder'
 import { tools } from './data/tools'
 import Layout from './components/Layout'
+import About from './components/About'
 
 function Home() {
     return (
@@ -42,6 +43,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/base64-encoder" element={<Base64Encoder />} />
         </Route>
       </Routes>
