@@ -4,6 +4,7 @@ import Base64Encoder from './tools/Base64Encoder'
 import { tools } from './data/tools'
 import Layout from './components/Layout'
 import About from './components/About'
+import Base64Decoder from './tools/Base64Decoder'
 
 function Home() {
     return (
@@ -45,6 +46,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="base64-encoder" element={<Base64Encoder />} />
+          <Route path="base64-decoder" element={<Base64Decoder />} />
         </Route>
       </Routes>
     </BrowserRouter>

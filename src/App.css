@@ -331,6 +331,15 @@
   background: #ddd;
 }
 
+.decode-button {
+  width: 100%;
+  padding: 10px;
+}
+
+.decode-button:hover {
+  background: #ddd;
+}
+
 .copy-button {
   align-self: center;
   padding: 8px 18px;
