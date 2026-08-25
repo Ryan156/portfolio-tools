@@ -17,6 +17,9 @@ function Layout() {
       <Outlet />
 
       <footer className="footer">
+
+        <div className="footer-inner">
+
         <div className="footer-brand">
           <strong>ryan's tools</strong>
           <span>© 2026</span>
@@ -27,6 +30,8 @@ function Layout() {
           <strong>Links</strong>
           <a href="/">Home</a>
           <a href="/">About</a>
+        </div>
+
         </div>
       </footer>
     </div>
