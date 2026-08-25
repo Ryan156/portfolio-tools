@@ -14,4 +14,9 @@ export const tools = [
     name: 'Lorem Ipsum Generator',
     description: 'Generate a random lorem ipsum text',
   },
+  {
+    id: 'analog-clock',
+    name: 'Analog Clock',
+    description: 'Display a digital analog clock',
+  },  
 ]

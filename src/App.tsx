@@ -6,6 +6,7 @@ import Layout from './components/Layout'
 import About from './components/About'
 import Base64Decoder from './tools/Base64Decoder'
 import Loremipsum from './tools/Loremipsum'
+import AnalogClock from './tools/AnalogClock'
 
 function Home() {
     return (
@@ -49,6 +50,7 @@ function App() {
           <Route path="base64-encoder" element={<Base64Encoder />} />
           <Route path="base64-decoder" element={<Base64Decoder />} />
           <Route path="lorem-ipsum-generator" element={<Loremipsum />} />
+          <Route path="analog-clock" element={<AnalogClock />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -493,3 +493,66 @@
   font: inherit;
   cursor: pointer;
 }
+
+.clock {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 4px solid white;
+    border-radius: 50%;
+}
+
+.second-hand {
+    position: absolute;
+    width: 2px;
+    height: 120px;
+    background: white;
+    left: 50%;
+    bottom: 50%;
+    transform-origin: bottom center;
+}
+
+.minute-hand {
+    position: absolute;
+    width: 4px;
+    height: 100px;
+    background: white;
+    left: 50%;
+    bottom: 50%;
+    transform-origin: bottom center;
+}
+
+.hour-hand {
+    position: absolute;
+    width: 6px;
+    height: 70px;
+    background: white;
+    left: 50%;
+    bottom: 50%;
+    transform-origin: bottom center;
+}
+
+.clock {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 4px solid white;
+    border-radius: 50%;
+}
+
+.tick-marks {
+    position: absolute;
+    inset: 0;
+}
+
+.tick {
+    position: absolute;
+    width: 2px;
+    height: 6px;
+    background: #666;
+
+    left: 50%;
+    top: 50%;
+
+    transform-origin: center center;
+}
