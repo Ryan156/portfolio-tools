@@ -11,6 +11,9 @@ function Layout() {
         <nav>
           <a href="/">Home</a>
           <a href="/about">About</a>
+          <a href="https://portfolio-ryanlimwh.com">
+            Portfolio
+          </a>
         </nav>
       </header>
 
@@ -30,6 +33,9 @@ function Layout() {
           <strong>Links</strong>
           <a href="/">Home</a>
           <a href="/about">About</a>
+          <a href="https://portfolio-ryanlimwh.com">
+            Portfolio
+          </a>
         </div>
 
         </div>
