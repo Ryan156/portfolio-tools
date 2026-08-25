@@ -3,7 +3,7 @@
 }
 
 .header {
-  width: min(1100px, calc(100% - 40px));
+  width: min(1500px, calc(100% - 80px));
   margin: 0 auto;
   padding: 20px 0;
   display: flex;
@@ -35,7 +35,7 @@
 
 .hero {
   text-align: center;
-  padding: 90px 20px 60px;
+  padding: 65px 20px 45px;
 }
 
 .hero h1 {
@@ -54,7 +54,7 @@
 }
 
 .hero input {
-  width: min(460px, 100%);
+  width: min(600px, 100%);
   padding: 13px 16px;
   border: 1px solid #3a3a3a;
   border-radius: 6px;
@@ -73,7 +73,7 @@
 }
 
 .tools {
-  width: min(1000px, calc(100% - 40px));
+  width: min(1500px, calc(100% - 80px));
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -149,12 +149,12 @@
 }
 
 .tool-layout {
-  width: min(1100px, calc(100% - 40px));
+  width: min(1200px, calc(100% - 40px));
   margin: 0 auto;
-  padding: 60px 0;
+  padding: 50px 0;
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 40px;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 32px;
 }
 
 .tool-sidebar {
@@ -206,7 +206,8 @@
 
 .tool-main h1 {
   margin: 0;
-  font-size: 42px;
+  font-size: 40px;
+  line-height: 1.1;
 }
 
 .tool-main > p {
@@ -215,13 +216,13 @@
 }
 
 .tool-panel {
-  padding: 28px;
+  padding: 24px;
   border: 1px solid #333;
   border-radius: 6px;
   background: #171719;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .tool-panel label {

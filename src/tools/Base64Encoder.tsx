@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import ToolSidebar from '../components/ToolSidebar'
+import Toast from '../components/Toast'
 
 function Base64Encoder() {
   const [input, setInput] = useState('')
@@ -73,16 +74,10 @@ function Base64Encoder() {
                 onClick={copyResult}
                 disabled={!result}
                 >
-                Copy
+                Copy Encoded Text
                 </button>
 
-                <div className="toast-stack">
-                    {[...toasts].reverse().map((toast) => (
-                    <div key={toast} className="copy-toast">
-                        ✓ Copied to clipboard!
-                    </div>
-                    ))}
-                </div>
+                <Toast toasts={toasts} />
 
             </section>
 
@@ -91,18 +86,25 @@ function Base64Encoder() {
 
             <h3>What is Base64?</h3>
             <p>
-                Base64 is an encoding method that represents binary data using
-                a set of 64 ASCII characters. It is commonly used when binary
-                data needs to be represented as text.
+                What is Base64 encoding? Base64 is a encoding mechanism that encodes binary-to-text. 
+                That is binary data is converted to ASCII string format by using radix-65 representation.
             </p>
 
-            <h3>Is Base64 encryption?</h3>
+            <h3>How does Base64 encoding work?</h3>
             <p>
-                No. Base64 is encoding, not encryption. Encoded data can be
-                decoded without a key.
+                Base64 encoding works by translating the data into a radix-64 representation. 
+                That means all input characters is converted to a choose 64 chracters that can be easily printed as text. 
+                Mostly it uses A-Z, a-z, 0-9, + & /. = character is used for padding in base64 encoding
             </p>
 
-            <h3>Example</h3>
+            <h3>What is the use of Base64 encoding?</h3>
+            <p>
+                 Base64 encoding is used to transmit binary format data or files across channels that only suports text contents.
+                 It is mostly used in Web pages for embedding image files and other binary files.
+                 Also used for sending attachements in emails.
+            </p>
+
+            <h3>What is Base64 encoding example?</h3>
             <p>
                 <code>Hello World</code> → <code>SGVsbG8gV29ybGQ=</code>
             </p>
