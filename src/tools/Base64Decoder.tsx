@@ -14,7 +14,7 @@ function Base64Decoder() {
             const bytes = Uint8Array.from(binary, (char) => char.charCodeAt(0))
 
             const decoded = new TextDecoder('utf-8',{fatal:true}).decode(bytes)
-            
+
             setResult(decoded)
         } catch {
             setResult('Error decoding Base64 string.')

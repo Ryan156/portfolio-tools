@@ -9,4 +9,9 @@ export const tools = [
     name: 'Base64 Decoder',
     description: 'Decode Base64 to text',
   },
+  {
+    id: 'lorem-ipsum-generator',
+    name: 'Lorem Ipsum Generator',
+    description: 'Generate a random lorem ipsum text',
+  },
 ]

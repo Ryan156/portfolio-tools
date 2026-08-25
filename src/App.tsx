@@ -5,6 +5,7 @@ import { tools } from './data/tools'
 import Layout from './components/Layout'
 import About from './components/About'
 import Base64Decoder from './tools/Base64Decoder'
+import Loremipsum from './tools/Loremipsum'
 
 function Home() {
     return (
@@ -47,6 +48,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="base64-encoder" element={<Base64Encoder />} />
           <Route path="base64-decoder" element={<Base64Decoder />} />
+          <Route path="lorem-ipsum-generator" element={<Loremipsum />} />
         </Route>
       </Routes>
     </BrowserRouter>
