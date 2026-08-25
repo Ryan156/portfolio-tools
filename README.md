@@ -13,10 +13,6 @@ Each tool is designed to be lightweight and work directly in the browser wheneve
 ## Features
 
 - Base64 Encoder
-- Base64 Decoder
-- Random Number Generator
-- UUID Generator
-- JSON Formatter
 
 > More tools will be added as the project develops.
 
