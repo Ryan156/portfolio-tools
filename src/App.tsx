@@ -9,10 +9,10 @@ function Home() {
 
       <main>
         <section className="hero">
-          <h1>RYAN'S WEB TOOLS</h1>
+          <h2>RYAN's S.A.K TOOLS</h2>
 
           <p>
-            A collection of small, useful tools for everyday problems.
+            aka Swiss Army Knife Tools <br />A collection of small, useful tools for everyday problems.
           </p>
 
           <input

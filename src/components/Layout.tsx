@@ -5,7 +5,7 @@ function Layout() {
     <div className="app">
       <header className="header">
         <a href="/" className="logo">
-          ryan's tools
+          S.A.K Tools
         </a>
 
         <nav>
@@ -21,9 +21,9 @@ function Layout() {
         <div className="footer-inner">
 
         <div className="footer-brand">
-          <strong>ryan's tools</strong>
+          <strong>S.A.K Tools</strong>
           <span>© 2026</span>
-          <span>Built by Ryan</span>
+          <span>Built by Ryan Lim</span>
         </div>
 
         <div className="footer-links">
