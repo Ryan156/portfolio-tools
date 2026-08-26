@@ -15,6 +15,7 @@ Each tool is designed to be lightweight and work directly in the browser wheneve
 - Base64 Encoder
 - Base64 Decoder
 - Lorem Ipsum Generator
+- Analog Clock
 
 > More tools will be added as the project develops.
 
