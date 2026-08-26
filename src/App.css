@@ -524,11 +524,6 @@
     transform-origin: bottom center;
 }
 
-.tick-marks {
-    position: absolute;
-    inset: 0;
-}
-
 .clock {
     position: relative;
     width: 300px;
@@ -538,19 +533,30 @@
     margin: 0 auto;
 }
 
-.tick {
+.tick-marks {
     position: absolute;
-    width: 2px;
-    height: 6px;
-    background: #666;
-    left: 50%;
-    top: 50%;
-    transform-origin: 50% 0;
+    inset: 0;
 }
 
-.hour-tick {
+.tick {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    pointer-events: none;
+}
+
+.tick-line {
+    width: 2px;
+    height: 6px;
+    margin-top: 5px;
+    background: #666;
+}
+
+.hour-tick .tick-line {
     width: 3px;
-    height: 10px;
+    height: 12px;
     background: #aaa;
 }
 
@@ -570,4 +576,69 @@
 .tool-main h1,
 .tool-main .tool-description {
     text-align: center;
+}
+
+@media (max-width: 700px) {
+
+  .tools {
+    width: calc(100% - 32px);
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .tool-card {
+    padding: 18px 16px;
+  }
+
+  .tool-layout {
+    width: calc(100% - 32px);
+    padding: 30px 0 40px;
+    display: block;
+  }
+
+  .tool-sidebar {
+    display: none;
+  }
+
+  .tool-main {
+    width: 100%;
+  }
+
+  .tool-main h1 {
+    font-size: 28px;
+  }
+
+  .tool-main > p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .tool-panel {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+  }
+
+  .lorem-controls {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .lorem-actions button {
+    width: 90px;
+  }
+
+  .generated-result {
+    min-height: 140px;
+  }
+
+  /* Mobile clock */
+  .clock {
+    width: 240px;
+    height: 240px;
+  }
+
+    .tick {
+        transform: rotate(var(--tick-angle)) translateY(-105px);
+  }
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import ToolSidebar from '../components/ToolSidebar'
 
 function AnalogClock() {
@@ -63,12 +63,11 @@ function AnalogClock() {
                                         key={index}
                                         className={`tick ${index % 5 === 0 ? 'hour-tick' : ''}`}
                                         style={{
-                                            transform: `
-                                                rotate(${index * 6}deg)
-                                                translateY(-140px)
-                                            `
+                                            transform: `rotate(${index * 6}deg)`
                                         }}
-                                    />
+                                    >
+                                        <div className="tick-line" />
+                                    </div>
                                 ))}
                             </div>
                     </div>
