@@ -1,9 +1,6 @@
 import { useEffect } from "react";
 import posthog from "posthog-js";
 
-console.log('PostHog key:', import.meta.env.VITE_POSTHOG_KEY)
-console.log('PostHog host:', import.meta.env.VITE_POSTHOG_HOST)
-
 function PostHog() {
     useEffect(() => {
         const key = import.meta.env.VITE_POSTHOG_KEY;
