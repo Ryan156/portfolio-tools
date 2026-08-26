@@ -14,7 +14,7 @@ function PostHog() {
         posthog.init(key, {
         api_host: host,
         defaults: "2026-01-30",
-        capture_pageview: false,
+        capture_pageview: true,
         disable_session_recording: false,
         });
 
