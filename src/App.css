@@ -477,13 +477,6 @@
   font: inherit;
 }
 
-.lorem-actions {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin: 4px 0 8px;
-}
-
 .generate-button {
   width: auto;
   padding: 10px 18px;
@@ -493,9 +486,15 @@
   min-height: 180px;
 }
 
+.lorem-actions {
+  display: flex;
+  gap: 10px;
+  margin: 4px 0 8px;
+}
+
 .lorem-actions button {
-  width: 110px;
-  padding: 10px 0px;
+  flex: 1;
+  padding: 10px 0;
   border: 0;
   border-radius: 4px;
   background: #f5f5f5;
