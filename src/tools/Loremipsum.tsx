@@ -154,6 +154,54 @@ function Loremipsum() {
                 <Toast toasts={toasts} />
 
                 </section>
+
+                <section className="tool-about">
+                    <h2>About Lorem Ipsum Generator</h2>
+
+                    <h3>How to generate Lorem Ipsum / lipsum using this Lorem Ipsum generator tool?</h3>
+                    <p>
+                        Steps for generating test data<br/>
+
+                        Number: Select the total number of output required.<br/>
+                        Type: Select output type: Paragraphs, Sentences or Word.<br/>
+                        Click Generate: And the dataset file will get downloaded.<br/>
+                        Copy generated data: In the output box use the blue color copy button to copy Lorem Ipsum generated output and paste it anywhere.
+                        It will get copied to clipboard.
+                    </p>
+
+                    <h3>What is Lorem Ipsum?</h3>
+                    <p>
+                        Lorem Ipsum or lipsum is a dummy text or placeholder text used a visualise laying out print, 
+                        graphic or web designs. While making it live or actual printing it is replaced with final copy.
+                    </p>
+
+                    <h3>Why do you need Lorem Ipsum?</h3>
+                    <p>
+                        Lorem Ipsum texts resembles real world text because of varying word & sentence length.
+                        So using it helps to visualise the design better. It is mostly needed by designer as placeholder text.
+                    </p>
+
+                    <h3>How to use Lorem Ipsum in your website, designs or photoshop?</h3>
+                    <p>
+                        Generate the Loreum Ipsum based on your requirenment from above tools, 
+                        copy to clipboard and use it in your website, designs or photoshop
+                    </p>
+                    <h3>How to generate lorem ipsum text?</h3>
+                    <p>
+                        To generate lorem ipsum online use <a href="https://tools.portfolio-ryanlimwh.com/lorem-ipsum-generator"> tools.portfolio-ryanlimwh.com</a> lorem-ipsum-generator tool
+                    </p>                   
+                    <h3>Why is realistic data important?</h3>
+                    <p>
+                        It is important that the test data generated should be real-looking data. 
+                        This will help to perform any kind of simulation or testing with real data and not similar kinds of data. If your dataset is real like then the output will very effective
+                    </p>
+                    <h3>Is this lorem ipsum generator safe & secure?</h3>
+                    <p>
+                        Yes, this lorem ipsum generator is safe & secure.
+                        We do not save any of your data in server. Neither the data is visible to any 3rd party.
+                    </p>
+                </section>
+
             </main>
         </div>
     )

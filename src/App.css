@@ -173,6 +173,16 @@
   align-items: flex-start;
 }
 
+.tool-about a {
+  color: inherit;
+  text-decoration: underline;
+  font-size: 14px;
+  &:hover
+  {
+    text-decoration:none;
+  }
+}
+
 .footer-brand,
 .footer-links {
   display: flex;
