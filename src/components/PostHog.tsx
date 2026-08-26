@@ -12,9 +12,10 @@ function PostHog() {
         }
 
         posthog.init(key, {
-            api_host: host,
-            defaults: "2026-01-30",
-            capture_pageview: false,
+        api_host: host,
+        defaults: "2026-01-30",
+        capture_pageview: false,
+        disable_session_recording: false,
         });
 
         posthog.capture("$pageview");
