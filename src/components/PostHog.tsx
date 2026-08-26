@@ -18,8 +18,6 @@ function PostHog() {
         disable_session_recording: false,
         });
 
-        console.log("PostHog loaded:", posthog.__loaded)
-console.log("PostHog session:", posthog.get_session_id())
         posthog.capture("$pageview");
     }, []);
 
