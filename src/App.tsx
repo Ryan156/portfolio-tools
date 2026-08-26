@@ -1,7 +1,8 @@
-import { Routes, Route, BrowserRouter } from 'react-router-dom'
+import { Routes, Route, BrowserRouter, Link} from 'react-router-dom'
 import './App.css'
 import Base64Encoder from './tools/Base64Encoder'
 import { tools } from './data/tools'
+import { useState } from 'react'
 import Layout from './components/Layout'
 import About from './components/About'
 import Base64Decoder from './tools/Base64Decoder'
@@ -9,6 +10,12 @@ import Loremipsum from './tools/Loremipsum'
 import AnalogClock from './tools/AnalogClock'
 
 function Home() {
+
+  const [search, setSearch] = useState('')
+  const filteredTools = tools.filter((tool) =>
+    tool.name.toLowerCase().includes(search.toLowerCase())
+  )
+
     return (
 
       <main>
@@ -22,18 +29,30 @@ function Home() {
           <input
             type="search"
             placeholder="Search for a tool..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
             aria-label="Search for a tool"
           />
         </section>
 
-      <section className="tools">
-        {tools.map((tool) => (
-          <a key={tool.id} href={`/${tool.id}`} className="tool-card">
-            <h2>{tool.name}</h2>
-            <p>{tool.description}</p>
-          </a>
-        ))}
-      </section>
+        <section className="tools">
+          {filteredTools.length > 0 ? (
+            filteredTools.map((tool) => (
+              <Link
+                key={tool.id}
+                to={`/${tool.id}`}
+                className="tool-card"
+              >
+                <h2>{tool.name}</h2>
+                <p>{tool.description}</p>
+              </Link>
+            ))
+          ) : (
+            <p className="no-results">
+              No tools found for "{search}".
+            </p>
+          )}
+        </section>
 
       </main>
     
