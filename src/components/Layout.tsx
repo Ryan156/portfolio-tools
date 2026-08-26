@@ -1,8 +1,16 @@
 import { Outlet } from 'react-router-dom'
+import GoogleTagManager from './GoogleAnalytics'
+import PostHog from './PostHog'
 
 function Layout() {
   return (
     <div className="app">
+
+      {/*Google Analytics and PostHog*/}
+      <GoogleTagManager />
+      <PostHog />
+      {/*End of Google Analytics and PostHog*/}
+      
       <header className="header">
         <a href="/" className="logo">
           S.A.K Tools
