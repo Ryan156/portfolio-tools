@@ -18,5 +18,10 @@ export const tools = [
     id: 'analog-clock',
     name: 'Analog Clock',
     description: 'Display a digital analog clock',
+  },
+  {
+    id: 'stopwatch',
+    name: 'Stopwatch',
+    description: 'Measure time with a stopwatch',
   },  
 ]
