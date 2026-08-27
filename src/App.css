@@ -614,6 +614,30 @@
   margin-bottom: 50px;
 }
 
+.show-card {
+  display: flex;
+  gap: 24px;
+  padding: 20px;
+  margin-bottom: 12px;
+  border: 1px solid #aaa;
+}
+
+.show-card img {
+  width: 200px;
+  height: 280px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.show-info {
+  flex: 1;
+}
+
+.encode-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 @media (max-width: 700px) {
 
   .tools {

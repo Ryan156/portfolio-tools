@@ -23,5 +23,10 @@ export const tools = [
     id: 'stopwatch',
     name: 'Stopwatch',
     description: 'Measure time with a stopwatch',
-  },  
+  },
+  {
+    id: 'tv-show-lookup',
+    name: 'TV Show Lookup',
+    description: 'Lookup TV show information.',
+  },
 ]
