@@ -701,4 +701,16 @@
     .tick {
         transform: rotate(var(--tick-angle)) translateY(-105px);
   }
+
+  .show-card {
+    flex-direction: column;
+  }
+
+  .show-card img {
+    width: 170px;
+  }
+
+  .show-info {
+    width: 100%;
+  }
 }
