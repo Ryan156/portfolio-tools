@@ -620,6 +620,12 @@
   padding: 20px;
   margin-bottom: 12px;
   border: 1px solid #aaa;
+  color: inherit;
+  text-decoration: none
+}
+
+.show-card:visited {
+  color: inherit;
 }
 
 .show-card img {
@@ -724,15 +730,17 @@
 }
 
 .season-modal-header {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  padding: 24px 28px;
-
+  padding: 20px;
   background: #222;
-  border-bottom: 1px solid #444;
+  z-index: 10;
+}
 
+.season-modal-close {
   flex-shrink: 0;
 }
 
@@ -902,7 +910,7 @@
     width: 100%;
   }
 
-    .episode-card {
+  .episode-card {
     flex-direction: column;
   }
 
@@ -918,6 +926,49 @@
 
   .season-card {
     padding: 10px;
+  }
+
+  .show-details {
+    flex-direction: column;
+  }
+
+  .show-details img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .show-info {
+    width: 100%;
+  }
+
+  .season-modal {
+    width: calc(100% - 20px);
+    max-height: 90vh;
+  }
+
+  .episode-card {
+    display: block;
+  }
+
+  .episode-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .episode-info {
+    padding-top: 16px;
+  }
+
+  .season-modal {
+    width: calc(100vw - 20px);
+    max-width: none;
+    margin: 10px;
+  }
+
+  .season-modal-content {
+    padding: 16px;
   }
 
   @media (max-width: 400px) {

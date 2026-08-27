@@ -10,6 +10,7 @@ function TVShowLookup() {
     const [shows, setShows] = useState([])
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
+    const [hasSearched, setHasSearched] = useState(false)
 
     const genres = {
     10759: 'Action & Adventure',
@@ -36,6 +37,7 @@ async function searchShows() {
     setShows([])
     setError('')
     setLoading(true)
+    setHasSearched(true)
 
   console.log('Searching for:', search)
 
@@ -134,11 +136,12 @@ async function searchShows() {
               {(search || shows.length > 0 || error) && (
                 <button
                   type="button"
-                  className="clear-button"
+                  className="encode-button"
                   onClick={() => {
                     setSearch('')
                     setShows([])
                     setError('')
+                    setHasSearched(false)
                   }}
                 >
                   Clear
@@ -147,7 +150,7 @@ async function searchShows() {
             </div>
             <div className="show-results">
 
-                {!loading && !error && shows.length === 0 && search && (
+                {!loading && !error && shows.length === 0 && hasSearched && (
                   <p>No TV shows found.</p>
                 )}
 
