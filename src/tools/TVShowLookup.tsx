@@ -9,6 +9,7 @@ function TVShowLookup() {
     const [search, setSearch] = useState('')
     const [shows, setShows] = useState([])
     const [loading, setLoading] = useState(false)
+    const [error, setError] = useState('')
 
     const genres = {
     10759: 'Action & Adventure',
@@ -33,6 +34,7 @@ async function searchShows() {
   if (!search.trim()) return
 
     setShows([])
+    setError('')
     setLoading(true)
 
   console.log('Searching for:', search)
@@ -48,20 +50,28 @@ async function searchShows() {
       }
     )
 
+    if (!response.ok) {
+        throw new Error(`TMDB request failed: ${response.status}`)
+    }
+
     const data = await response.json()
 
     const detailedShows = await Promise.all(
-  data.results.map(async (show) => {
+         data.results.map(async (show) => {
 
-    const response = await fetch(
-      `https://api.themoviedb.org/3/tv/${show.id}`,
-      {
-        headers: {
-          Authorization: `Bearer ${TMDB_TOKEN}`,
-          accept: 'application/json',
+        const response = await fetch(
+        `https://api.themoviedb.org/3/tv/${show.id}`,
+        {
+            headers: {
+            Authorization: `Bearer ${TMDB_TOKEN}`,
+            accept: 'application/json',
         },
       }
     )
+
+    if (!response.ok) {
+        throw new Error(`TMDB detail request failed: ${response.status}`)
+    }
 
     const details = await response.json()
 
@@ -78,11 +88,12 @@ async function searchShows() {
 
     console.log('Detailed shows:', detailedShows)
 
-  } catch (error) {
+    } catch (error) {
     console.error('TMDB request failed:', error)
-  } finally {
+    setError('Something went wrong. Please try again.')
+    } finally {
     setLoading(false)
-  }
+    }
 }
 
   return (
@@ -97,12 +108,18 @@ async function searchShows() {
         </p>
 
         <div className="tool-panel">
-          <textarea
-            id='Encoder-input'
+            <input
+            type='search'
+            className='tool-input'
             placeholder="Enter TV show name"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-          />
+            onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                searchShows()
+                }
+            }}
+            />
 
           <button
             type='button'
@@ -116,6 +133,12 @@ async function searchShows() {
 
                 {!loading && shows.length === 0 && search && (
                 <p>No TV shows found.</p>
+                )}
+
+                {error && (
+                <p className="error-message">
+                    {error}
+                </p>
                 )}
 
                 {shows.map((show) => (

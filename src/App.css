@@ -638,6 +638,17 @@
   opacity: 0.6;
 }
 
+.tool-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  background: #222;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+}
+
 @media (max-width: 700px) {
 
   .tools {
