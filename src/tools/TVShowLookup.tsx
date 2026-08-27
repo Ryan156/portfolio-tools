@@ -121,33 +121,34 @@ async function searchShows() {
             }}
             />
 
-          <button
-            type='button'
-            className='encode-button'
-            onClick={searchShows}
-            disabled={loading}
-            >
-            {loading ? 'Searching...' : 'Search'}
-          </button>
-
-            {(search || shows.length > 0 || error) && (
-            <button
+            <div className="search-actions">
+              <button
                 type="button"
-                className="clear-button"
-                onClick={() => {
-                setSearch('')
-                setShows([])
-                setError('')
-                }}
-            >
-                Clear
-            </button>
-            )}
+                className="encode-button"
+                onClick={searchShows}
+                disabled={loading}
+              >
+                {loading ? 'Searching...' : 'Search'}
+              </button>
 
+              {(search || shows.length > 0 || error) && (
+                <button
+                  type="button"
+                  className="clear-button"
+                  onClick={() => {
+                    setSearch('')
+                    setShows([])
+                    setError('')
+                  }}
+                >
+                  Clear
+                </button>
+              )}
+            </div>
             <div className="show-results">
 
-                {!loading && shows.length === 0 && search && (
-                <p>No TV shows found.</p>
+                {!loading && !error && shows.length === 0 && search && (
+                  <p>No TV shows found.</p>
                 )}
 
                 {error && (

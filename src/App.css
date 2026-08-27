@@ -817,6 +817,15 @@
   gap: 24px;
 }
 
+.search-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.search-actions button {
+  flex: 1;
+}
+
 @media (max-width: 700px) {
 
   .tools {
