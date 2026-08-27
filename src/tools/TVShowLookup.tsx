@@ -162,7 +162,7 @@ async function searchShows() {
 
                 {shows.map((show) => (
                 <Link 
-                  to={`/tv/${show.id}`}
+                  to={`/tv-show-lookup-details/${show.id}`}
                     className="show-card"
                     key={show.id}
                 >

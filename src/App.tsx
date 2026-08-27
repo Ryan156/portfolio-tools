@@ -75,7 +75,7 @@ function App() {
           <Route path="analog-clock" element={<AnalogClock />} />
           <Route path="stopwatch" element={<Stopwatch />} />
           <Route path="tv-show-lookup" element={<TVShowLookup />} />
-          <Route path="tv/:id" element={<TVShowDetails />} />        
+          <Route path="tv-show-lookup-details/:id" element={<TVShowDetails />} />        
         </Route>
       </Routes>
     </BrowserRouter>
