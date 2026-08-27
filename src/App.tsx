@@ -10,6 +10,7 @@ import Loremipsum from './tools/Loremipsum'
 import AnalogClock from './tools/AnalogClock'
 import Stopwatch from './tools/Stopwatch'
 import TVShowLookup from './tools/TVShowLookup'
+import TVShowDetails from './tools/TVShowDetails'
 
 function Home() {
 
@@ -73,7 +74,8 @@ function App() {
           <Route path="lorem-ipsum-generator" element={<Loremipsum />} />
           <Route path="analog-clock" element={<AnalogClock />} />
           <Route path="stopwatch" element={<Stopwatch />} />
-          <Route path="tv-show-lookup" element={<TVShowLookup />} />       
+          <Route path="tv-show-lookup" element={<TVShowLookup />} />
+          <Route path="tv/:id" element={<TVShowDetails />} />        
         </Route>
       </Routes>
     </BrowserRouter>

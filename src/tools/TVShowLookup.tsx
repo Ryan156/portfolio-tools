@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import ToolSidebar from '../components/ToolSidebar'
-
+import { Link } from 'react-router-dom'
 
 function TVShowLookup() {
   
@@ -129,6 +129,21 @@ async function searchShows() {
             >
             {loading ? 'Searching...' : 'Search'}
           </button>
+
+            {(search || shows.length > 0 || error) && (
+            <button
+                type="button"
+                className="clear-button"
+                onClick={() => {
+                setSearch('')
+                setShows([])
+                setError('')
+                }}
+            >
+                Clear
+            </button>
+            )}
+
             <div className="show-results">
 
                 {!loading && shows.length === 0 && search && (
@@ -142,7 +157,11 @@ async function searchShows() {
                 )}
 
                 {shows.map((show) => (
-                <div className="show-card" key={show.id}>
+                <Link 
+                  to={`/tv/${show.id}`}
+                    className="show-card"
+                    key={show.id}
+                >
                     {show.poster_path && (
                     <img
                         src={`https://image.tmdb.org/t/p/w200${show.poster_path}`}
@@ -166,7 +185,7 @@ async function searchShows() {
 
                     <p>{show.overview}</p>
                     </div>
-                </div>
+                </Link>
                 ))}
             </div>
         </div>
