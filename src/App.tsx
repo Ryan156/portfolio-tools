@@ -9,7 +9,7 @@ import Base64Decoder from './tools/Base64Decoder'
 import Loremipsum from './tools/Loremipsum'
 import AnalogClock from './tools/AnalogClock'
 import Stopwatch from './tools/Stopwatch'
-import TVShowLookup from './tools/TVShowlookup'
+import TVShowLookup from './tools/TVShowLookup'
 
 function Home() {
 
