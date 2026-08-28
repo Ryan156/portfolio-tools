@@ -616,12 +616,15 @@
 
 .show-card {
   display: flex;
-  gap: 24px;
-  padding: 20px;
-  margin-bottom: 12px;
-  border: 1px solid #aaa;
+  flex-direction: row;
+  gap: 28px;
+  padding: 24px;
+  margin-bottom: 16px;
+  border: 1px solid #444;
+  border-radius: 6px;
   color: inherit;
-  text-decoration: none
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
 .show-card:visited {
@@ -629,14 +632,24 @@
 }
 
 .show-card img {
-  width: 200px;
-  height: 280px;
+  width: 250px;
+  height: 375px;
   object-fit: cover;
   flex-shrink: 0;
 }
 
 .show-info {
   flex: 1;
+  width: 100%;
+}
+
+.show-info h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.show-info p {
+  margin: 0 0 16px;
 }
 
 .encode-button:disabled {
@@ -653,6 +666,11 @@
   border-radius: 4px;
   color: white;
   font-size: 16px;
+}
+
+.tool-input:focus {
+  outline: none;
+  border-color: #777;
 }
 
 .clear-button {
@@ -674,11 +692,18 @@
 .season-modal {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  width: calc(100vw - 20px);
+  max-width: none;
+  margin: 10px;
+  max-height: 90vh;
+  background: #222;
+  border: 1px solid #444;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
 .season-modal-content {
@@ -692,11 +717,21 @@
   overflow-y: auto;
 }
 
+.season-modal-overlay {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(2px);
+}
+
 .episode-card {
-  display: flex;
+  display: block;
+  flex-direction: column;
   gap: 20px;
-  padding: 16px 0;
+  padding: 20px 0;
   border-bottom: 1px solid #444;
+}
+
+.episode-card:last-child {
+  border-bottom: none;
 }
 
 .episode-card img {
@@ -741,7 +776,18 @@
 }
 
 .season-modal-close {
-  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #555;
+  border-radius: 50%;
+  background: transparent;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.season-modal-close:hover {
+  background: #333;
 }
 
 .episode-list {
@@ -778,6 +824,7 @@
   border: 1px solid #444;
   border-radius: 8px;
   background: #1f1f1f;
+  transition: transform 0.2s ease, border-color 0.2s ease;  
 }
 
 .season-card img {
@@ -787,6 +834,11 @@
   border-radius: 4px;
   display: block;
   margin-bottom: 14px;
+}
+
+.season-card:hover {
+  transform: translateY(-3px);
+  border-color: #777;
 }
 
 .season-card button {
@@ -827,11 +879,17 @@
 
 .search-actions {
   display: flex;
-  gap: 12px;
+  gap: 10px;
+  margin-top: 12px;
 }
 
 .search-actions button {
   flex: 1;
+}
+
+.show-card:hover {
+  border-color: #777;
+  transform: translateY(-2px);
 }
 
 @media (max-width: 700px) {
@@ -898,22 +956,6 @@
         transform: rotate(var(--tick-angle)) translateY(-105px);
   }
 
-  .show-card {
-    flex-direction: column;
-  }
-
-  .show-card img {
-    width: 170px;
-  }
-
-  .show-info {
-    width: 100%;
-  }
-
-  .episode-card {
-    flex-direction: column;
-  }
-
   .episode-card img {
     width: 100%;
     height: auto;
@@ -924,31 +966,26 @@
     gap: 12px;
   }
 
-  .season-card {
-    padding: 10px;
-  }
-
   .show-details {
+    display: flex;
     flex-direction: column;
+    gap: 24px;
+    margin-top: 30px;
   }
 
   .show-details img {
     width: 100%;
     max-width: 300px;
     height: auto;
+    align-self: center;
   }
 
-  .show-info {
-    width: 100%;
+  .show-details h2 {
+    margin-top: 0;
   }
 
-  .season-modal {
-    width: calc(100% - 20px);
-    max-height: 90vh;
-  }
-
-  .episode-card {
-    display: block;
+  .show-details p {
+    margin-bottom: 16px;
   }
 
   .episode-card img {
@@ -961,14 +998,19 @@
     padding-top: 16px;
   }
 
-  .season-modal {
-    width: calc(100vw - 20px);
-    max-width: none;
-    margin: 10px;
-  }
-
   .season-modal-content {
     padding: 16px;
+  }
+
+  .show-card {
+    flex-direction: column;
+  }
+
+  .show-card img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    align-self: center;
   }
 
   @media (max-width: 400px) {
