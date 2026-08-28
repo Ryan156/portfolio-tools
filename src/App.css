@@ -908,6 +908,107 @@
   border-color: #666;
 }
 
+.password-control {
+    width: 100%;
+    max-width: 410px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.password-preview-button {
+    width: 100%;
+    height: 60px;
+    font-size: 1rem;
+    text-align: center;
+    border: none;
+    border-radius: 6px;
+    background: #f4f4f4;
+    color: #111;
+    cursor: pointer;
+    align-self: center;
+}
+
+.password-length {
+    display: grid;
+    grid-template-columns: 1fr 80px;
+    gap: 10px 16px;
+    align-items: center;
+}
+
+.password-length label {
+    font-weight: 600;
+}
+
+.password-length span {
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.password-length input[type="range"] {
+    grid-column: 1 / -1;
+    width: 100%;
+}
+
+.password-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 40px;
+}
+
+.password-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+}
+
+.password-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+}
+
+.password-options input[type="checkbox"] {
+    appearance: none;
+    width: 38px;
+    height: 22px;
+    background: #f4f4f4;
+    border-radius: 999px;
+    position: relative;
+    cursor: pointer;
+    margin: 0;
+}
+
+.password-options input[type="checkbox"]::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: #111;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 3px;
+    left: 3px;
+
+    transition: transform 0.2s ease;
+}
+
+.password-options input[type="checkbox"]:checked::before {
+    transform: translateX(16px);
+}
+
+.generate-password-button,
+.password-copy-button {
+    padding: 8px 14px;
+    font-size: 14px;
+}
+
+
 @media (max-width: 700px) {
 
   .tools {
@@ -1027,6 +1128,17 @@
     max-width: 300px;
     height: auto;
     align-self: center;
+  }
+
+  .toast-stack {
+      top: 70px;
+      width: calc(100% - 32px);
+      height: 50px;
+  }
+
+  .copy-toast {
+      padding: 14px 16px;
+      font-size: 14px;
   }
 
   @media (max-width: 400px) {

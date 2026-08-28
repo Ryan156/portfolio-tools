@@ -29,4 +29,9 @@ export const tools = [
     name: 'TV Show Lookup',
     description: 'Lookup TV show information.',
   },
+  {
+    id: 'password-generator',
+    name: 'Password Generator',
+    description: 'Generate a random password.',
+  },
 ]
