@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ToolSidebar from '../components/ToolSidebar'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams} from 'react-router-dom'
 
 function TVShowLookup() {
   
@@ -10,7 +10,7 @@ function TVShowLookup() {
     const [shows, setShows] = useState([])
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
-    const [hasSearched, setHasSearched] = useState(false)
+    const [searchParams, setSearchParams] = useSearchParams()
 
     const genres = {
     10759: 'Action & Adventure',
@@ -31,19 +31,16 @@ function TVShowLookup() {
     37: 'Western',
     }
 
-async function searchShows() {
-  if (!search.trim()) return
+async function searchShows(query) {
+  if (!query.trim()) return
 
     setShows([])
     setError('')
     setLoading(true)
-    setHasSearched(true)
-
-  console.log('Searching for:', search)
 
   try {
     const response = await fetch(
-              `https://api.themoviedb.org/3/search/tv?query=${encodeURIComponent(search)}`,
+              `https://api.themoviedb.org/3/search/tv?query=${encodeURIComponent(query)}`,
       {
         headers: {
           Authorization: `Bearer ${TMDB_TOKEN}`,
@@ -84,11 +81,7 @@ async function searchShows() {
   })
 )
 
-    console.log('First detailed show:', detailedShows[0])
-
     setShows(detailedShows)
-
-    console.log('Detailed shows:', detailedShows)
 
     } catch (error) {
     console.error('TMDB request failed:', error)
@@ -97,6 +90,18 @@ async function searchShows() {
     setLoading(false)
     }
 }
+
+    useEffect(() => {
+      const query = searchParams.get('search')
+
+      if (!query) {
+        setSearch('')
+        return
+      }
+
+      setSearch(query)
+      searchShows(query)
+    }, [searchParams])
 
   return (
     <div className="tool-layout">
@@ -117,9 +122,11 @@ async function searchShows() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             onKeyDown={(e) => {
-                if (e.key === 'Enter') {
-                searchShows()
-                }
+              if (e.key === 'Enter') {
+                if (!search.trim()) return
+
+                setSearchParams({ search: search.trim() })
+              }
             }}
             />
 
@@ -127,7 +134,11 @@ async function searchShows() {
               <button
                 type="button"
                 className="encode-button"
-                onClick={searchShows}
+                onClick={() => {
+                  if (!search.trim()) return
+
+                  setSearchParams({ search: search.trim() })
+                }}
                 disabled={loading}
               >
                 {loading ? 'Searching...' : 'Search'}
@@ -141,7 +152,7 @@ async function searchShows() {
                     setSearch('')
                     setShows([])
                     setError('')
-                    setHasSearched(false)
+                    setSearchParams({})
                   }}
                 >
                   Clear
@@ -150,8 +161,11 @@ async function searchShows() {
             </div>
             <div className="show-results">
 
-                {!loading && !error && shows.length === 0 && hasSearched && (
-                  <p>No TV shows found.</p>
+                {!loading &&
+                  !error &&
+                  shows.length === 0 &&
+                  searchParams.get('search') && (
+                    <p>No TV shows found.</p>
                 )}
 
                 {error && (

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import ToolSidebar from '../components/ToolSidebar'
 
 function TVShowDetails() {
@@ -9,6 +9,7 @@ function TVShowDetails() {
     const [episodes, setEpisodes] = useState([])
     const [selectedSeason, setSelectedSeason] = useState(null)
     const [loadingEpisodes, setLoadingEpisodes] = useState(false)
+    const navigate = useNavigate()
 
         useEffect(() => {
     async function getShowDetails() {
@@ -65,6 +66,15 @@ function TVShowDetails() {
                 <p className="tool-description">
                 Lookup TV show information.
                 </p>
+
+                <button
+                type="button"
+                className="back-button"
+                onClick={() => navigate(-1)}
+                >
+                ← Back to Search
+                </button>
+
                 <h3>{show.name}</h3>
 
                 <div className="show-details">
