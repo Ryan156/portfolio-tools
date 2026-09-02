@@ -1,8 +1,7 @@
 import { useRef, useState } from "react"
-
 import ToolSidebar from "../components/ToolSidebar"
-
 import { PDFDocument } from "pdf-lib"
+import PDFPreview from "../components/PDFPreview"
 
 import {
     DndContext,
@@ -80,7 +79,7 @@ function SortablePDFCard({
                 className="pdf-preview"
                 {...listeners}
             >
-                PDF
+                <PDFPreview file={pdf.file} />
             </div>
 
             <p>{pdf.file.name}</p>
