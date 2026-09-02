@@ -7,6 +7,7 @@ import {
     DndContext,
     closestCenter,
     PointerSensor,
+    TouchSensor,
     useSensor,
     useSensors,
     type DragEndEvent,
@@ -105,6 +106,13 @@ function PDFMerge() {
         useSensor(PointerSensor, {
             activationConstraint: {
                 distance: 8,
+            },
+        }),
+
+        useSensor(TouchSensor, {
+            activationConstraint: {
+                delay: 200,
+                tolerance: 5,
             },
         })
     )
