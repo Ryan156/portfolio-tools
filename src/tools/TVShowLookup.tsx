@@ -207,7 +207,22 @@ async function searchShows(query) {
                 ))}
             </div>
         </div>
+            <section className="tool-about">
+            <h2>About TV Show Lookup</h2>
 
+            <h3>What is TV Show Lookup?</h3>
+            <p>
+                TV Show Lookup is a tool that allows you to search for and find information about your favorite TV shows.
+            </p>
+
+            <h3>How does TV Show Lookup work?</h3>
+            <p>
+                TV Show Lookup uses the {<a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer">
+                TMDB (The Movie Database)</a>} API to fetch information about TV shows. 
+                You can search for shows by name, and the tool will display relevant results with details 
+                like ratings, genres, and overviews.
+            </p>
+            </section>
       </main>
     </div>
   )
