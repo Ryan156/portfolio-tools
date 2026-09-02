@@ -12,6 +12,7 @@ import Stopwatch from './tools/Stopwatch'
 import TVShowLookup from './tools/TVShowLookup'
 import TVShowDetails from './tools/TVShowDetails'
 import PasswordGenerator from './tools/PasswordGenerator'
+import PDFMerge from './tools/PdfMerge'
 
 function Home() {
 
@@ -78,6 +79,7 @@ function App() {
           <Route path="tv-show-lookup" element={<TVShowLookup />} />
           <Route path="tv-show-lookup-details/:id" element={<TVShowDetails />} />        
           <Route path="password-generator" element={<PasswordGenerator />} />
+          <Route path="pdf-merge" element={<PDFMerge />} />
         </Route>
       </Routes>
     </BrowserRouter>

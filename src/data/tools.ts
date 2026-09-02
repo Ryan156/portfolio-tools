@@ -34,4 +34,9 @@ export const tools = [
     name: 'Password Generator',
     description: 'Generate a random password.',
   },
+  {
+    id: 'pdf-merge',
+    name: 'PDF Merge',
+    description: 'Combine PDFs in the order you want.',
+  },
 ]

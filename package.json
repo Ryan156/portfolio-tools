@@ -10,7 +10,12 @@
     "deploy": "vite build && wrangler deploy"
   },
   "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
     "cloudflare-workers": "^0.0.14",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^6.3.289",
     "posthog-js": "^1.419.4",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
