@@ -12,7 +12,7 @@ import Stopwatch from './tools/Stopwatch'
 import TVShowLookup from './tools/TVShowLookup'
 import TVShowDetails from './tools/TVShowDetails'
 import PasswordGenerator from './tools/PasswordGenerator'
-import PDFMerge from './tools/PdfMerge'
+import PDFMerge from './tools/PDFMerge'
 
 function Home() {
 
