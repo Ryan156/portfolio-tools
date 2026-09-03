@@ -1315,6 +1315,154 @@
     object-fit: contain;
 }
 
+.password-checker-panel {
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem auto;
+
+    padding: 1.25rem;
+
+    background: #252525;
+    border: 1px solid #3a3a3a;
+    border-radius: 12px;
+}
+
+.password-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.password-input-wrapper > input {
+    flex: 1;
+
+    padding: 0.9rem 1rem;
+
+    background: #1e1e1e;
+    color: #f5f5f5;
+
+    border: 1px solid #444;
+    border-radius: 6px;
+
+    font-size: 1rem;
+}
+
+.password-input-wrapper > input:focus {
+    outline: none;
+    border-color: #777;
+}
+
+.show-password-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    white-space: nowrap;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.strength-bar {
+    margin-top: 1rem;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 6px;
+
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+/* Empty */
+
+.strength-0 {
+    background: #333;
+}
+
+/* Too weak */
+
+.strength-1 {
+    background: #542525;
+}
+
+/* Weak */
+
+.strength-2 {
+    background: #6b4722;
+}
+
+/* Fair */
+
+.strength-3 {
+    background: #665d25;
+}
+
+/* Strong */
+
+.strength-4 {
+    background: #2f633d;
+}
+
+/* Very strong */
+
+.strength-5 {
+    background: #245c3b;
+}
+
+.password-requirements {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.5rem;
+
+    margin-top: 1rem;
+}
+
+.password-length {
+    color: #ddd;
+}
+
+.requirement {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.requirement.active {
+    color: #8ac99a;
+}
+
+.requirement.empty {
+    color: #FF0000;
+}
+
+.requirement span {
+    font-weight: bold;
+}
+
+.password-review,
+.password-privacy {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.password-review {
+    margin-top: 1.5rem;
+    color: #ddd;
+}
+
+.password-privacy {
+    margin-top: 0.75rem;
+    color: #aaa;
+    font-weight: 600;
+}
+
 @media (max-width: 700px) {
 
   .tools {
@@ -1437,14 +1585,31 @@
   }
 
   .toast-stack {
-      top: 70px;
-      width: calc(100% - 32px);
-      height: 50px;
+    top: 70px;
+    width: calc(100% - 32px);
+    height: 50px;
   }
 
   .copy-toast {
-      padding: 14px 16px;
-      font-size: 14px;
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+
+  .password-input-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .show-password-toggle {
+    justify-content: flex-end;
+  }
+
+  .password-requirements {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .password-length {
+    grid-column: span 2;
   }
 
   @media (max-width: 400px) {

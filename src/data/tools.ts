@@ -35,6 +35,11 @@ export const tools = [
     description: 'Generate a random password.',
   },
   {
+    id: 'password-strength-checker',
+    name: 'Password Strength Checker',
+    description: 'Check the strength of a password.',
+  },
+  {
     id: 'pdf-merge',
     name: 'PDF Merge',
     description: 'Combine PDFs in the order you want.',

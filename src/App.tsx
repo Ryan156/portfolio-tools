@@ -12,6 +12,7 @@ import Stopwatch from './tools/Stopwatch'
 import TVShowLookup from './tools/TVShowLookup'
 import TVShowDetails from './tools/TVShowDetails'
 import PasswordGenerator from './tools/PasswordGenerator'
+import PasswordStrengthChecker from './tools/PasswordStrengthChecker'
 import PDFMerge from './tools/PDFMerge'
 
 function Home() {
@@ -79,6 +80,7 @@ function App() {
           <Route path="tv-show-lookup" element={<TVShowLookup />} />
           <Route path="tv-show-lookup-details/:id" element={<TVShowDetails />} />        
           <Route path="password-generator" element={<PasswordGenerator />} />
+          <Route path="password-strength-checker" element={<PasswordStrengthChecker />} />
           <Route path="pdf-merge" element={<PDFMerge />} />
         </Route>
       </Routes>
