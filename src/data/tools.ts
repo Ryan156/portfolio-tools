@@ -44,4 +44,9 @@ export const tools = [
     name: 'PDF Merge',
     description: 'Combine PDFs in the order you want.',
   },
+  {
+    id: 'timezone-lookup',
+    name: 'Timezone Lookup',
+    description: 'Lookup time information for different timezones.',
+  },
 ]

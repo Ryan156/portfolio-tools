@@ -14,6 +14,7 @@ import TVShowDetails from './tools/TVShowDetails'
 import PasswordGenerator from './tools/PasswordGenerator'
 import PasswordStrengthChecker from './tools/PasswordStrengthChecker'
 import PDFMerge from './tools/PDFMerge'
+import TimezoneLookup from './tools/TimezoneLookup'
 
 function Home() {
 
@@ -82,6 +83,7 @@ function App() {
           <Route path="password-generator" element={<PasswordGenerator />} />
           <Route path="password-strength-checker" element={<PasswordStrengthChecker />} />
           <Route path="pdf-merge" element={<PDFMerge />} />
+          <Route path="timezone-lookup" element={<TimezoneLookup />} />
         </Route>
       </Routes>
     </BrowserRouter>
