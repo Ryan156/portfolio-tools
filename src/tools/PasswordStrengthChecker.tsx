@@ -78,6 +78,7 @@ function PasswordStrengthChecker() {
 
                             <input
                                 type="checkbox"
+                                className="checkbox checkbox-accent checkbox-md"
                                 checked={showPassword}
                                 onChange={(e) =>
                                     setShowPassword(e.target.checked)
