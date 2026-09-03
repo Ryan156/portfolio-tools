@@ -19,6 +19,8 @@ Each tool is designed to be lightweight and work directly in the browser wheneve
 - Stopwatch
 - TV Show Lookup
 - Password Generator
+- Password Strength Checker
+- PDF Merge
 
 > More tools will be added as the project develops.
 
