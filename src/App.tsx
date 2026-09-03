@@ -25,7 +25,7 @@ function Home() {
     return (
 
       <main>
-        <section className="hero">
+        <section className="home-hero">
           <h2>RYAN's S.A.K TOOLS</h2>
 
           <p>
