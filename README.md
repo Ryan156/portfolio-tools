@@ -31,6 +31,9 @@ Each tool is designed to be lightweight and work directly in the browser wheneve
 - React Router
 - CSS
 - Vite
+- PDF.js
+- PDF-lib
+- dnd-kit
 - TailwindCSS
 - DaisyUI
 
