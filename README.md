@@ -31,6 +31,8 @@ Each tool is designed to be lightweight and work directly in the browser wheneve
 - React Router
 - CSS
 - Vite
+- TailwindCSS
+- DaisyUI
 
 ## Getting Started
 
